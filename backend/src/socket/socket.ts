@@ -1,10 +1,4 @@
-import express from 'express'
-import { WebSocketServer, WebSocket } from "ws";
-
-const app = express()
-const httpServer = app.listen(8080)
-
-const wss = new WebSocketServer({ server: httpServer });
+import {wss} from "../index"
 
 wss.on('connection', function connection(ws) {
   ws.on('error', console.error);
